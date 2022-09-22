@@ -15,6 +15,7 @@ int fib(int n) {
 int main (void) {
   int n;
   scanf("%d", &n);
+  
   int xn = fib(n);
   printf("%d", xn);  
 
