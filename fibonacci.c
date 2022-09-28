@@ -25,7 +25,7 @@ int main (void) {
   }
   
   // se n for muito grande o programa
-  // sai com return 1;
+  // se encerra com return 1;
   
   printf("\n%d\n",x1);
   printf("%d\n",x2);
