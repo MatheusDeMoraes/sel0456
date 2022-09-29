@@ -1,19 +1,24 @@
 #include <stdio.h>
 
+int phi(int n) {
+  if (n == 1) {
+    return 0;  
+  }
+  if (n == 2) {
+    return 1;  
+  }
+  if (n >= 3) {
+    return phi(n-1) + phi(n-2);
+  }
+}
+
 int main (void) {
   
   // Variáveis
   int i; int n;
   
-  // x1 e x2: primeiros numeros da
-  // sequencia de fibonacci, 0 e 1
-  int x1 = 0;
-  int x2 = 1;
-
   int xn;
-  int xl = x1;
-  int xm = x2;
-
+  
   scanf("%d", &n);
   // scanf recebe um valor inteiro para
   // variavel n, e o programa imprime os
@@ -26,15 +31,10 @@ int main (void) {
   
   // se n for muito grande o programa
   // se encerra com return 1;
-  
-  printf("\n%d\n",x1);
-  printf("%d\n",x2);
 
-  for (i = 0; i < n-2; i++) {
-    xn = xl + xm;
+  for (i = 1; i <= n; i++) {
+    xn = phi(i);
     printf("%d\n",xn);
-    xl = xm;
-    xm = xn;
   }
 
   return 0;
