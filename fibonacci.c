@@ -1,23 +1,31 @@
 #include <stdio.h>
 
-int fib(int n) {
-  if (n == 1) {
-    return 0;  
-  }
-  if (n == 2) {
-    return 1;
-  }
-  if (n >= 3) {
-    return fib(n-1) + fib(n-2);
-  }
-}
-
 int main (void) {
-  int n;
+  
+  int n; int i;
+  float x1 = 0;
+  float x2 = 1;
+  float phi;
+  
+  float xn;
+  float xm = x2;
+  float xl = x1;
+  
   scanf("%d", &n);
   
-  int xn = fib(n);
-  printf("%d", xn);  
+  if (n > 50) {
+    return 1;  
+  }
+  
+  printf("%.0f\n%.0f\n",x1,x2);
+  
+  for (i = 0;i < n-2;i++) {
+    xn = xl + xm;
+    phi = xn/xm;
+    printf("%.0f\t\t%f\n",xn,phi);
+    xl = xm;
+    xm = xn;
+  } 
 
   return 0;
 }
